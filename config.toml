@@ -1,5 +1,7 @@
 # The URL the site will be built for
-base_url = "https://1k6a.com"
+# base_url = "https://1k6a.com"
+# dev
+base_url = "https://blog-zola.vercel.app"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
