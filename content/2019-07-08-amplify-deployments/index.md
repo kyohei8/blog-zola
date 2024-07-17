@@ -15,7 +15,7 @@ AWS Amplify は通常コミット時に自動的にデプロイのスクリプ�
 Git で管理していないデータを取り込んだりする際には、
 以下のように [amplify-cli](https://github.com/aws-amplify/amplify-cli) のコマンドをローカルから叩いて実行する必要があります。
 
-```shell
+```sh
 $ export AWS_PROFILE=deploy-profile
 $ amplify push
 ```
@@ -176,7 +176,7 @@ application/x-www-form-urlencoded
 
 ![api_gateway5.jpg](api_gateway5.jpg)
 
-```shell
+```sh
 $ curl -X POST \\
   <https://xxxx.execute-api.ap-northeast-1.amazonaws.com/prod/> \\
   -H "Content-Type:application/x-www-form-urlencoded"
