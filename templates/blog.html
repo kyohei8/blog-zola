@@ -2,7 +2,7 @@
 
 {% import "post-preview.html" as post_macros %}
 
-{% block posthead %} 
+{% block posthead %}
   {% for post in section.pages %}
     <link rel="prerender" href="{{ post.permalink }}" />
   {% endfor %}
@@ -11,7 +11,17 @@
 {% block content %}
   {{ section.content | safe }}
 
-  {% for post in section.pages %}
+  {% for post in paginator.pages %}
     {{ post_macros::post_preview(post=post) }}
   {% endfor %}
+
+  <nav class="pagination">
+    {% if paginator.previous %}
+      <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+    {% endif %}
+    {% if paginator.next %}
+      <a class="next" href="{{ paginator.next }}">Next ›</a>
+    {% endif %}
+  </nav>
+
 {% endblock content %}
