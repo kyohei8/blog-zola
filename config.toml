@@ -30,6 +30,8 @@ footer_page = """
 footer_about = """
 """
 
+gtag = "G-BX4DXEW9QP"
+
 [extra.author]
 name = 'Kyohei Tsukuda'
 photo = '/photo.jpg'
