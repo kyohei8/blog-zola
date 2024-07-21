@@ -93,7 +93,14 @@
     {% endblock description %}
 
     {% if page.title %}
-      <meta name="twitter:title" content="{{ page.title }}">
+      <meta name="twitter:title" content="{{ page.title~ " | " ~config.extra.site_title }}">
+      {# og画像を生成 #}
+      {% if page.taxonomies.tags %}
+        {% set tags = page.taxonomies.tags | join(sep=',') %}
+        {% set tags_query = "&tags="~ tags %}
+      {% endif %}
+      {% set og_image_url = "https://1k6a-og-image.vercel.app/image?title="~page.title~tags_query %}
+      <meta property="og:image" content="{{og_image_url}}" >
     {% else %}
       <meta name="twitter:title" content="{{ config.title }}">
     {% endif %}
@@ -108,7 +115,7 @@
     <title>
       {% block title %}
         {% if page.title %}
-          {{ page.title }}
+          {{ page.title~" | "~config.extra.site_title }}</title>
         {% else %}
           {{ config.title }}
         {% endif %}

@@ -22,7 +22,7 @@
         "@type": "WebPage",
         "@id": "https://google.com/article"
       },
-      "headline": "{{ page.title }}",
+      "headline": "{{ page.title ~ " | " ~config.extra.site_title }}",
       "image": [],
       "datePublished": "{{ page.date | date(format="%+") }}",
       "dateModified": "{{ page.date | date(format="%+") }}"{% if config.extra.author %},
