@@ -64,10 +64,9 @@
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary">
-
-    {% if config.twitter %}
-      <meta name="twitter:creator" content="@{{ config.twitter }}">
-      <meta name="twitter:site" content="@{{ config.twitter }}">
+    {% if config.extra.twitter %}
+      <meta name="twitter:creator" content="@{{ config.extra.twitter }}">
+      <meta name="twitter:site" content="@{{ config.extra.twitter }}">
     {% endif %}
 
     {% if page.extra.thumbnail %}
@@ -93,7 +92,7 @@
     {% endblock description %}
 
     {% if page.title %}
-      <meta name="twitter:title" content="{{ page.title~ " | " ~config.extra.site_title }}">
+      <meta name="twitter:title" content="{{ page.title~ " | " ~config.title }}">
       {# og画像を生成 #}
       {% if page.taxonomies.tags %}
         {% set tags = page.taxonomies.tags | join(sep=',') %}
@@ -115,7 +114,7 @@
     <title>
       {% block title %}
         {% if page.title %}
-          {{ page.title~" | "~config.extra.site_title }}</title>
+          {{ page.title~" | "~config.title }}</title>
         {% else %}
           {{ config.title }}
         {% endif %}
@@ -133,7 +132,7 @@
     {% block header %}
       <header class="header">
         <a href="/">
-          <h1>{{ config.extra.site_title }}</h1>
+          <h1>{{ config.title }}</h1>
         </a>
         <div class="profile">
           {% set icon = resize_image(path=config.extra.profile_small, width=128, height=128, op="fill") -%}
