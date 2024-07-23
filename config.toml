@@ -35,7 +35,7 @@ footer_about = """
 """
 
 accent="#ff3412"
-# accent_light="#ff9482"
+accent_light="#fba595"
 
 gtag = "G-BX4DXEW9QP"
 twitter="kyoheiz"
