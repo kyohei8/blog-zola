@@ -43,10 +43,10 @@
     <meta name="theme-color" content="{{ config.extra.accent }}" />
 
     {% if config.extra.profile_small %}
-      {% set icon = resize_image(path=config.extra.profile_small, width=48, height=48, op="fill") -%}
+      {% set icon = resize_image(path=config.extra.icon, width=48, height=48, op="fill") -%}
       <link rel="icon" href="{{ icon.url }}" />
       {% for size in [48,72,96,144,192,256,384,512] -%}
-        {% set icon = resize_image(path=config.extra.profile_small, width=size, height=size, op="fill") -%}
+        {% set icon = resize_image(path=config.extra.icon, width=size, height=size, op="fill") -%}
         <link rel="apple-touch-icon" sizes="{{size}}x{{size}}" href="{{ icon.url }}" />
       {% endfor %}
     {% endif %}

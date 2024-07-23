@@ -25,6 +25,8 @@ nav = []
 
 site_description = "A personal blog"
 profile_small = "profile-pic_thumb.jpg"
+icon = "icons/icon-48x48.png"
+
 footer_page = """
 © 2024, all rights reserved
 """
@@ -32,11 +34,12 @@ footer_page = """
 footer_about = """
 """
 
-# accent="blue"
-# accent_light="blue-dark"
+accent="#ff3412"
+# accent_light="#ff9482"
 
 gtag = "G-BX4DXEW9QP"
 twitter="kyoheiz"
+
 
 [extra.author]
 name = 'Kyohei Tsukuda'
